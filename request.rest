@@ -1,3 +1,6 @@
+
+GET http://localhost:3003/turma
+=======
 GET http://localhost:3003/estudante/3254
 
 ###
@@ -11,3 +14,4 @@ Content-Type: application/json
     "data_nasc": "1999-06-03",
     "turma_id": "001"
 }
+
