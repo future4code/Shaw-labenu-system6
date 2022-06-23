@@ -1,1 +1,13 @@
-http://localhost:3003/test
+GET http://localhost:3003/estudante/3254
+
+###
+
+POST http://localhost:3003/criarestudante
+Content-Type: application/json
+
+{
+    "nome": 20,
+    "email": "naruto@gmail.com",
+    "data_nasc": "1999-06-03",
+    "turma_id": "001"
+}
