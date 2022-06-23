@@ -1,8 +1,8 @@
-GET http://localhost:3003/estudante/3254
+GET http://localhost:3003/estudante/Matheus
 
 ###
 
-POST http://localhost:3003/criarestudante
+POST http://localhost:3003/criar-estudante
 Content-Type: application/json
 
 {
@@ -10,4 +10,13 @@ Content-Type: application/json
     "email": "naruto@gmail.com",
     "data_nasc": "1999-06-03",
     "turma_id": "001"
+}
+
+###
+
+PUT http://localhost:3003/estudante/alterar-turma/1ts56b8d
+Content-Type: application/json
+
+{
+    "turma_id": "002"
 }
