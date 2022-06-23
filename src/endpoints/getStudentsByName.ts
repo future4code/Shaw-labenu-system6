@@ -4,16 +4,20 @@ import { DataStudents } from "../data/DataStudent"
 export const getStudentsByName = async (req: Request, res: Response) => {
     try {
 
-        const nome: any = req.params.nome
+        const nome: string = req.params.nome
 
-        // if(!nome){
-        //     throw new Error("Nome não encontrado")
-        // }
         const studentDB = new DataStudents()
 
         const students = await studentDB.selctStudents(nome)
 
-        console.log(nome)
+        if(students.length === 0){
+            throw new Error("Nome não encontrado")
+        }
+
+        // if(nome !== String(nome)){
+        //     throw new Error("Valor invalido")
+        // }
+
         res.send(students)
 
     } catch (error: any) {

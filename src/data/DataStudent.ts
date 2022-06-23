@@ -17,6 +17,7 @@ export class DataStudents extends DataBase{
 
     public async insertStudents(student: StudentModel){
         try{
+                       
             await DataBase.connection("estudante")
             .insert({
                 id: student.getId(),
@@ -26,7 +27,6 @@ export class DataStudents extends DataBase{
                 turma_id: student.getTurmaId()
             })
             
-         
         }catch (error:any){
             throw new Error("Erro inesperado no servidor")
         }
