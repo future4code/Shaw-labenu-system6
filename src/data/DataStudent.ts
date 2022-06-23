@@ -1,4 +1,5 @@
 import { StudentModel } from "../model/EstudanteModel";
+import { updateClassModel } from "../model/UpdateTurmaModel";
 import { DataBase } from "./DataBase";
 
 export class DataStudents extends DataBase{
@@ -29,6 +30,17 @@ export class DataStudents extends DataBase{
             
         }catch (error:any){
             throw new Error("Erro inesperado no servidor")
+        }
+    }
+
+    public async updateClass(turma_id: string, id:string){
+        try{
+            await DataBase.connection(`estudante`)
+            .update({turma_id: turma_id})
+            .where("id", id)
+
+        }catch(error:any){
+             throw new Error(error.sqlMessage)
         }
     }
 }
