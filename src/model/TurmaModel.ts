@@ -1,20 +1,26 @@
-export class TurmaModel{
+
+export class TurmaModel {
+
     constructor(
         private id: string,
         private nome: string,
         private modulo: string
     ){}
 
-    public getId(){
+    public getIdTurma(){
         return this.id
     }
 
-    public getNome(){
+    public getNomeTurma(){
         return this.nome
     }
 
-    public getModulo() {
+    public getModuloTurma(){
         return this.modulo
     }
     
 }
+
+
+export default TurmaModel
+
