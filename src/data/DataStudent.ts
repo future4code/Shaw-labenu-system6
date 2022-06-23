@@ -1,5 +1,4 @@
 import { StudentModel } from "../model/EstudanteModel";
-import { updateClassModel } from "../model/UpdateTurmaModel";
 import { DataBase } from "./DataBase";
 
 export class DataStudents extends DataBase{
