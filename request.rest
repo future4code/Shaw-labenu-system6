@@ -1,4 +1,9 @@
+
 GET http://localhost:3003/estudante/Matheus
+
+###
+
+GET http://localhost:3003/turma
 
 ###
 
@@ -20,3 +25,4 @@ Content-Type: application/json
 {
     "turma_id": "002"
 }
+
