@@ -1,8 +1,8 @@
 import {Request, Response} from "express"
-import { DataStudents } from "../data/DataStudent"
-import { StudentModel } from "../model/EstudanteModel"
+import { DataTeacher } from "../data/DataTeacher"
+import { DocenteModel } from "../model/DocenteModel"
 
-export const postStudent = async (req: Request, res: Response) => {
+export const postTeacher = async (req: Request, res: Response) => {
     try{
         
         const {nome, email, data_nasc, turma_id}= req.body
@@ -19,13 +19,14 @@ export const postStudent = async (req: Request, res: Response) => {
             throw new Error("Campo vazio!")
         }
 
-        const students = new StudentModel(id, nome, email, newDate, turma_id)
+        const teacher = new DocenteModel(id, nome, email, newDate, turma_id)
 
-        const studentDB = new DataStudents()
+        const teacherDB = new DataTeacher()
 
-        await studentDB.insertStudents(students)
+        await teacherDB.insertTeacher(teacher)
 
         res.status(201).end("OK")
+
     }catch(error:any){
         res.status(400).send(error.message)
     }

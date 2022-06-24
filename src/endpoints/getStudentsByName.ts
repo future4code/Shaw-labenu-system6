@@ -14,6 +14,14 @@ export const getStudentsByName = async (req: Request, res: Response) => {
             throw new Error("Nome não encontrado")
         }
 
+        if (nome !== String(nome)) {
+            throw new Error("Valores invalidos!")
+        }
+
+        if (nome.length === 0) {
+            throw new Error("Campo vazio")
+        }
+
         res.send(students)
 
     } catch (error: any) {
