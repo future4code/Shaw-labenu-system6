@@ -2,6 +2,8 @@
 
 Você estuda na Labenu_ há tanto tempo que já parecem anos, não é? Então, hoje, vamos pedir para criar um sistema que represente o básico da nossa organização. 
 
+Link para documentação: https://documenter.getpostman.com/view/20354123/UzBqq5mn
+
 Ele deve possuir, ao menos, as 3 entidades importantes:
 
 1. Estudantes 
