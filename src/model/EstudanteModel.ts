@@ -42,3 +42,4 @@ export class StudentModel{
         return this.turma_id
     }
 }
+

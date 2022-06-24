@@ -6,6 +6,10 @@ export default async function createTurma(req: Request, res: Response): Promise<
     try {
         const { id, nome, modulo } = req.body
 
+        if(!id  || !nome || !modulo){
+            throw new Error("Dados em falta para criação da Turma!")
+        }
+
         const turma = new TurmaModel(id, nome, modulo)
 
         const turmaDb = new TurmaDataBase()
@@ -15,8 +19,16 @@ export default async function createTurma(req: Request, res: Response): Promise<
         res.status(201).end("Criado Turma")
 
     } catch (error: any) {
-
-        res.status(500).end()
+        switch (error.message) {
+            case "Dados em falta para criação da Turma!":
+                res.status(400)
+                break;
+        
+            default:
+                res.status(500).end()
+                break;
+        }
+        res.send(error.message)
 
     }
 }
