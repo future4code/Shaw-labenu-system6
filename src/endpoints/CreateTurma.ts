@@ -6,7 +6,7 @@ export default async function createTurma(req: Request, res: Response): Promise<
     try {
         const { id, nome, modulo } = req.body
 
-        if(!id  || !nome || !modulo){
+        if(id !== String(id) || nome !== String(nome) ||modulo !== String(modulo)){
             throw new Error("Dados em falta para criação da Turma!")
         }
 

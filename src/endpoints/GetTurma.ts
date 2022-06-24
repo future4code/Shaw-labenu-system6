@@ -7,7 +7,7 @@ export default async function getAllTurma(req: Request, res: Response): Promise<
 
         const turma = await TurmaDb.getAll()
         res.send(turma)
-        
+      
     } catch (error: any) {
         res.status(500).send(error.message)
 
