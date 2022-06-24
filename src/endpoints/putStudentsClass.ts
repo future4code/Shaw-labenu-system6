@@ -23,7 +23,7 @@ export const putStudentsClass = async (req: Request, res: Response) => {
 
         await studentDB.updateClass(turma_id, id)
 
-        res.status(202).end("OK")
+        res.status(202).end("Estudante Foi alterado de turma com sucesso")
 
     }catch(error:any){
         res.status(400).send(error.message)
