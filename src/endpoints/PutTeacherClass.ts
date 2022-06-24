@@ -1,7 +1,7 @@
 import {Request, Response} from "express"
-import { DataStudents } from "../data/DataStudent"
+import { DataTeacher } from "../data/DataTeacher"
 
-export const putStudentsClass = async (req: Request, res: Response) => {
+export const putTeacherClass = async (req: Request, res: Response) => {
     try{
         const {turma_id}= req.body
 
@@ -10,7 +10,7 @@ export const putStudentsClass = async (req: Request, res: Response) => {
         if(turma_id.length === 0 || id.length === 0){
             throw new Error("Campo vazio")
         }
-
+        
         if(!turma_id || !id){
             throw new Error("ID não encontrado")
         }
@@ -18,10 +18,10 @@ export const putStudentsClass = async (req: Request, res: Response) => {
         if (turma_id !== String(turma_id) || id !== String(id)) {
             throw new Error("Valores invalidos!")
         }
-        
-        const studentDB = new DataStudents()
 
-        await studentDB.updateClass(turma_id, id)
+        const teacherDB = new DataTeacher()
+
+        await teacherDB.updateClassTeacher(turma_id, id)
 
         res.status(202).end("OK")
 
