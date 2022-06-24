@@ -2,22 +2,36 @@ import { app } from "./app";
 import createTurma from "./endpoints/CreateTurma";
 import getAllTurma from "./endpoints/GetTurma";
 import updateModulo from "./endpoints/UpdateTurma";
-import { getStudentsByName } from "./endpoints/getStudentsByName";
-import { postStudent } from "./endpoints/postStudents";
-import { putStudentsClass } from "./endpoints/putStudentsClass";
+import { getStudentsByName } from "./endpoints/GetStudentsByName";
+import { postStudent } from "./endpoints/PostStudents";
+import { putStudentsClass } from "./endpoints/PutStudentsClass";
+import { getAllStudents } from "./endpoints/GetAllStudents";
+import { getAllTeachers } from "./endpoints/GetAllTeachers";
+import { postTeacher } from "./endpoints/PostTeacher";
+import { putTeacherClass } from "./endpoints/PutTeacherClass";
 
-app.post("/criar-estudante", postStudent)
-
-app.put("/estudante/alterar-turma/:id", putStudentsClass)
-
-app.get("/turma",getAllTurma)
-
-app.post("/create-turma",createTurma)
-
-app.put("/updateModel/:id", updateModulo)
+app.get("/estudantes", getAllStudents)
 
 app.get("/estudante/:nome", getStudentsByName)
 
-app.post("/criarestudante", postStudent)
+app.get("/docentes", getAllTeachers)
+
+app.get("/turma",getAllTurma)
+
+app.post("/criar-estudante", postStudent)
+
+app.post("/create-turma",createTurma)
+
+app.post("/criar-docente", postTeacher)
+
+app.put("/updateModel/:id", updateModulo)
+
+app.put("/estudante/alterar-turma/:id", putStudentsClass)
+
+app.put("/docente/alterar-turma/:id", putTeacherClass)
+
+
+
+
 
 

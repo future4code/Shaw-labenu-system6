@@ -15,6 +15,16 @@ export class DataStudents extends DataBase{
         }
     }
 
+    public async selctAllStudents(){
+        try{
+            const result = await DataBase.connection("estudante")
+            .select("*")
+            return result
+        }catch (error:any){
+            throw new Error("Erro inesperado no servidor")
+        }
+    }
+
     public async insertStudents(student: StudentModel){
         try{
                        
@@ -33,13 +43,15 @@ export class DataStudents extends DataBase{
     }
 
     public async updateClass(turma_id: string, id:string){
+        
         try{
-            await DataBase.connection(`estudante`)
+            await DataBase.connection("estudante")
+            .where({id: id})
             .update({turma_id: turma_id})
-            .where("id", id)
-
+           
+            
         }catch(error:any){
-             throw new Error(error.sqlMessage)
+             throw new Error(error.message)
         }
     }
 }
