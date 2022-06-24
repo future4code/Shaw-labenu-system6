@@ -25,7 +25,7 @@ export const postStudent = async (req: Request, res: Response) => {
 
         await studentDB.insertStudents(students)
 
-        res.status(201).end("OK")
+        res.status(201).end("Estudante Criado com Sucesso!")
     }catch(error:any){
         res.status(400).send(error.message)
     }
