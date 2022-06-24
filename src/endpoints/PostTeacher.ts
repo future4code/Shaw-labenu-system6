@@ -12,11 +12,13 @@ export const postTeacher = async (req: Request, res: Response) => {
         const id:string = Math.floor(Date.now() * Math.random()).toString(36)
 
         if (nome !== String(nome) || email !== String(email) || data_nasc !== String(data_nasc) || id !== String(id) || turma_id !== String(turma_id)) {
+            res.status(406)
             throw new Error("Valores invalidos!")
         }
     
         if (!nome || !email || !data_nasc || !id || !turma_id) {
-            throw new Error("Campo vazio!")
+            res.status(400)
+            throw new Error("Campo vazio")
         }
 
         const teacher = new DocenteModel(id, nome, email, newDate, turma_id)
@@ -28,6 +30,6 @@ export const postTeacher = async (req: Request, res: Response) => {
         res.status(201).end("Docente foi criado com Sucesso!")
 
     }catch(error:any){
-        res.status(400).send(error.message)
+        res.send(error.message)
     }
 }

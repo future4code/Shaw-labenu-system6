@@ -15,19 +15,19 @@ POST http://localhost:3003/criar-estudante
 Content-Type: application/json
 
 {
-    "nome": "Susana",
+    "nome": "Lilian",
     "email": "susana@gmail.com",
     "data_nasc": "05/04/2002",
-    "turma_id": "006"
+    "turma_id": "005"
 }
 
 ###
 
-PUT http://localhost:3003/estudante/alterar-turma/1ts56b8d
+PUT http://localhost:3003/estudante/alterar-turma/30
 Content-Type: application/json
 
 {
-    "turma_id": "002"
+    "turma_id": "001"
 }
 
 ###
@@ -52,5 +52,5 @@ PUT http://localhost:3003/docente/alterar-turma/3wb76k4p
 Content-Type: application/json
 
 {
-    "turma_id": "002"
+    "turma_id": "005"
 }
