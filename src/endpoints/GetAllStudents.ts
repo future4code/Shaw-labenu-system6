@@ -9,12 +9,14 @@ export const getAllStudents = async (req: Request, res: Response) => {
         const students = await studentDB.selctAllStudents()
 
         if(students.length === 0){
-            throw new Error("Nome não encontrado")
+            res.status(402)
+            throw new Error("Estudante não encontrado")
         }
 
         res.send(students)
 
     } catch (error: any) {
-        res.status(500).send(error.message)
+        res.send(error.message)
+
     }
 }

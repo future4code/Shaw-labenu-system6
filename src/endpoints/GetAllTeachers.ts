@@ -9,12 +9,13 @@ export const getAllTeachers = async (req: Request, res: Response) => {
         const theacher = await teacherDB.selctAllTeachers()
 
         if(theacher.length === 0){
-            throw new Error("Professor não encontrado")
+            res.status(404)
+            throw new Error("Professores não encontrados")
         }
 
         res.send(theacher)
 
     } catch (error: any) {
-        res.status(500).send(error.message)
+        res.send(error.message)
     }
 }

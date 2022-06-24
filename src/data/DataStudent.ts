@@ -38,7 +38,7 @@ export class DataStudents extends DataBase{
             })
             
         }catch (error:any){
-            throw new Error("Erro inesperado no servidor")
+            throw new Error("Erro")
         }
     }
 

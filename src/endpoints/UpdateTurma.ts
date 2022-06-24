@@ -18,6 +18,7 @@ export async function updateModulo(req: Request, res: Response) {
     } catch (error: any) {
         switch (error.message) {
             case "Dados em falta para atualizar o modulo!":
+                res.status(404)
                 break;
             default:
                 res.status(500).end("Error No Atualização do módulo")
